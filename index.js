@@ -36,8 +36,8 @@ app.post("/api/addNew",(req,res)=> {
 })
 
 app.post("/api/delete",(req,res)=> {
-    const {id} = req.body;
-    Keeper.deleteOne({__v:id}).then(function(){
+    const {title} = req.body;
+    Keeper.deleteOne({title:title}).then(function(){
         res.redirect("/api/getAll");
     })
 })
